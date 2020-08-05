@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
             return redirect(route('login'))->with('status', 'Confirmation email has been send, please check your email');
         }
-        return redirect(route('login'))->with('status', $validator->errors);
+        return redirect(route('login'))->with('status', $validator->errors());
     }
 
     public function confirmation($token){
