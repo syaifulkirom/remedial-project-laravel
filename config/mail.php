@@ -16,7 +16,8 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    // 'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => 'smtp.gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +44,8 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    // 'port' => env('MAIL_PORT', 587),
+    'port' => 587,
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +59,10 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        // 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        // 'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'lixtech20@gmail.com',
+        'name' => 'Admin Ganteng',
     ],
 
     /*
@@ -71,7 +76,8 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    // 'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => 'tls',
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +90,11 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    // 'username' => env('MAIL_USERNAME'),
+    'username' => 'lixtech20@gmail.com',
 
-    'password' => env('MAIL_PASSWORD'),
+    // 'password' => env('MAIL_PASSWORD'),
+    'password' => 'd4teknikinformatika',
 
     /*
     |--------------------------------------------------------------------------
