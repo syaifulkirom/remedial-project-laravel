@@ -74,13 +74,21 @@ class RegisterController extends Controller
     protected function register(Request $request){
         $input = $request->all();
         $validator = $this->validator($input);
+        
 
         if ($validator->passes()) {
             $data = $this->create($input)->toArray();
+            // $photo = $data['photo'];
+            $data['photo'] = NULL;
+
+            if($request->photo){
+                $data['photo'] = $request->file('photo')->store('image_users');
+            }
 
             $data['token'] = str_random(25);
             $user = User::find($data['id']);
             $user->token = $data['token'];
+            $user->photo = $data['photo'];
             $user->save();
 
             Mail::send("mails.confirmation", $data, function($message) use($data){

@@ -59,10 +59,8 @@ return [
     */
 
     'from' => [
-        // 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        // 'name' => env('MAIL_FROM_NAME', 'Example'),
-        'address' => 'lixtech20@gmail.com',
-        'name' => 'Admin Ganteng',
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Bisane Remidi len?'),
     ],
 
     /*
@@ -76,8 +74,7 @@ return [
     |
     */
 
-    // 'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-    'encryption' => 'tls',
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,11 +87,10 @@ return [
     |
     */
 
-    // 'username' => env('MAIL_USERNAME'),
-    'username' => 'lixtech20@gmail.com',
+    'username' => env('MAIL_USERNAME'),
 
-    // 'password' => env('MAIL_PASSWORD'),
-    'password' => 'd4teknikinformatika',
+    'password' => env('MAIL_PASSWORD'),
+
 
     /*
     |--------------------------------------------------------------------------

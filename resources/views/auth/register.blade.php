@@ -8,7 +8,7 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -62,6 +62,21 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="photo" class="col-md-4 control-label">Foto</label>
+
+                            <div class="col-md-6">
+                                <input id="php" type="file" class="form-control" name="photo" onchange="readURL(this);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="photo" class="col-md-4 control-label"></label>
+                            <div class="col-md-6">
+                                <img src="#" alt="" id="blah" width="200">
+                            </div>
+                        </div>
+                        
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
@@ -74,4 +89,17 @@
         </div>
     </div>
 </div>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 @endsection

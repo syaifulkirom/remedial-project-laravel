@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Mail;
+use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -35,5 +39,20 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    public function authenticated(Request $request, $user){
+        if (Auth::user()->confirmed == 0) {
+            $user = User::where('email', $request->email)->first();
+            
+            $this->guard()->logout();
+            $request->session()->invalidate();
+            Mail::send("mails.confirmation", ['email' => $request->email, 'name' => $user->name, 'token' => $user->token], function($message) use($request){
+                $message->to($request->email);
+                $message->subject('Registration Confirmation');
+            });
+            return back()->with('danger', 'You need to confirm your account. We have sent you an activation link, please check your email.');
+        }
+        return redirect()->intended($this->redirectPath());
     }
 }

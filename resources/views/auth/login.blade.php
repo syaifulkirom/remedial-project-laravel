@@ -13,6 +13,11 @@
                             {{ $status }}
                         </div>
                     @endif
+                    @if ($status = Session::get('danger'))
+                        <div class="alert alert-danger">
+                            {{ $status }}
+                        </div>
+                    @endif
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
