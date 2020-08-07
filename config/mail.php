@@ -60,7 +60,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Bisane Remidi len?'),
+        'name' => env('MAIL_FROM_NAME', 'Syaiful Qirom'),
     ],
 
     /*
@@ -87,9 +87,11 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    // 'username' => env('MAIL_USERNAME'),
+    'username' => 'syaifulqirom2@gmail.com',
 
-    'password' => env('MAIL_PASSWORD'),
+    // 'password' => env('MAIL_PASSWORD'),
+    'password' => 'pemalang210999',
 
 
     /*
